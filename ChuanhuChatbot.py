@@ -15,7 +15,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] [%(filename)s:%(lineno)d] %(message)s",
 )
 
-my_api_key = "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"  # 在这里输入你的 API 密钥
+my_api_key = ""  # 在这里输入你的 API 密钥
 
 # if we are running in Docker
 if os.environ.get("dockerrun") == "yes":
