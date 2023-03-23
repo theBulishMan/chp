@@ -431,24 +431,24 @@ logging.info(
     + colorama.Style.RESET_ALL
 )
 # 默认开启本地服务器，默认可以直接从IP访问，默认不创建公开分享链接
-demo.title = "川虎ChatGPT 🚀"
+demo.title = "wjChatGPT 🚀"
 
 if __name__ == "__main__":
     # if running in Docker
     if dockerflag:
         if authflag:
             demo.queue().launch(
-                server_name="0.0.0.0", server_port=7860, auth=(username, password),
+                server_name="0.0.0.0", server_port=6789, auth=(username, password),
                 favicon_path="./assets/favicon.png"
             )
         else:
-            demo.queue().launch(server_name="0.0.0.0", server_port=7860, share=False, favicon_path="./assets/favicon.png")
+            demo.queue().launch(server_name="0.0.0.0", server_port=6789, share=True, favicon_path="./assets/favicon.png")
     # if not running in Docker
     else:
         if authflag:
             demo.queue().launch(share=False, auth=(username, password), favicon_path="./assets/favicon.png", inbrowser=True)
         else:
-            demo.queue().launch(share=False, favicon_path="./assets/favicon.ico", inbrowser=True)  # 改为 share=True 可以创建公开分享链接
-        # demo.queue().launch(server_name="0.0.0.0", server_port=7860, share=False) # 可自定义端口
-        # demo.queue().launch(server_name="0.0.0.0", server_port=7860,auth=("在这里填写用户名", "在这里填写密码")) # 可设置用户名与密码
+            demo.queue().launch(share=True, favicon_path="./assets/favicon.ico", inbrowser=True)  # 改为 share=True 可以创建公开分享链接
+          demo.queue().launch(server_name="0.0.0.0", server_port=6789, share=True) # 可自定义端口
+          demo.queue().launch(server_name="0.0.0.0", server_port=6789,auth=("cwj", "chatgpt")) # 可设置用户名与密码
         # demo.queue().launch(auth=("在这里填写用户名", "在这里填写密码")) # 适合Nginx反向代理
